@@ -1,11 +1,13 @@
 import { defineBuildConfig } from 'unbuild'
-// import fg from 'fast-glob'
 
 export default defineBuildConfig({
-  entries: ['./src/index.ts'],
+  entries: ['./src/index'],
   clean: true,
-  declaration: true,
+  declaration: false,
   rollup: {
+    esbuild: {
+      minify: true,
+    },
     emitCJS: true,
     inlineDependencies: true,
   },
